@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/popup.css">
 </head>
 
 <body>
-    <div style="min-width:20em">
-        <h4>To use the fact-check finder, please highlight a piece of text and right-click it</h4>
-        <ul>
-            <li><button id="">options</button> </li>
-        </ul>
+    <div id="popup-div">
+        <span id="title">
+            <img src="../img/icon.png" alt="benedmo icon" id="icon">
+            Fact-check finder
+        </span>
+        <p><span style="background-color:yellow">Highlight</span> a piece of text and right-click it to search for fact-checks.</p>
+        <!-- <p>Check the <a id="optionsBtn" href="#">options</a> page</p> -->
+        <div id="results">
+        </div>
     </div>
 </body>
+
+<script src="../js/popup.js" type="module"></script>
 
 </html>
