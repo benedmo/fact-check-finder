@@ -21,7 +21,14 @@ browser.contextMenus.onClicked.addListener(async info => {
 		case 'action-selection': {
 			console.log(`Selected text "${info.selectionText}"`);
 			const data = getApiResults(info.selectionText);
-			await optionsStorage.set({factChecks: data});
+			await optionsStorage.set({factChecks: data, selectionText: info.selectionText});
+			try {
+				// Does not work on chrome
+				browser.browserAction.openPopup();
+			} catch {
+				browser.tabs.create({url: browser.runtime.getURL('html/results.html')});
+			}
+
 			break;
 		}
 
@@ -29,13 +36,3 @@ browser.contextMenus.onClicked.addListener(async info => {
 			console.error(`Handler for action ${info.menuItemId} not found`);
 	}
 });
-
-// Browser.runtime.onMessage.addListener(
-// 	(request, sender, sendResponse) => {
-// 		// browser.runtime.sendMessage({ action: "open-options" });
-// 		if (request.action === "open-options"){
-
-// 			// sendResponse({ farewell: "goodbye" });
-// 		}
-// 	}
-// );
