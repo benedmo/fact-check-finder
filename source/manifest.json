@@ -27,10 +27,6 @@
         "css": ["css/content.css"],
         "run_at": "document_end"
     }],
-    "options_ui": {
-        "browser_style": true,
-        "page": "html/options.html"
-    },
     "background": {
         "service_worker": "js/background.js",
         "type": "module"
