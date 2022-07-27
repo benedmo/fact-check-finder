@@ -6,6 +6,7 @@ export default new OptionsSync({
 		colorGreen: 67,
 		colorBlue: 54,
 		text: 'Set a text!',
+		factChecks: [],
 	},
 	migrations: [
 		OptionsSync.migrations.removeUnused,
