@@ -28,7 +28,6 @@ browser.contextMenus.onClicked.addListener(async info => {
 			} catch {
 				browser.tabs.create({url: browser.runtime.getURL('html/results.html')});
 			}
-
 			break;
 		}
 
