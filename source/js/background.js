@@ -9,24 +9,27 @@ browser.contextMenus.create({
 });
 
 function getApiResults(selectedText) {
-	// TODO: replace with real API calls
-	return [
-		{url: '#url1', title: selectedText, score: 0.65},
-		{url: '#url2', title: 'found 2', score: 0.85},
-	];
+	return fetch("https://benedmo.textgain.com/matchfc", {
+		method: "POST",
+		headers: { 'Content-Type': 'application/json', "X-API-KEY": "e466882d-6d1e-463c-ba6b-2bf2c4d23cb6" },
+		body: JSON.stringify({ q: selectedText })
+	}).then(
+		(response) => response.json()
+	)
 }
 
 browser.contextMenus.onClicked.addListener(async info => {
 	switch (info.menuItemId) {
 		case 'action-selection': {
 			console.log(`Selected text "${info.selectionText}"`);
-			const data = getApiResults(info.selectionText);
-			await optionsStorage.set({factChecks: data, selectionText: info.selectionText});
+			const data = await getApiResults(info.selectionText);
+			console.log(`got ${data.length} results`)
+			await optionsStorage.set({ factChecks: data, selectionText: info.selectionText });
 			try {
 				// Does not work on chrome
 				browser.browserAction.openPopup();
 			} catch {
-				browser.tabs.create({url: browser.runtime.getURL('html/results.html')});
+				browser.tabs.create({ url: browser.runtime.getURL('html/results.html') });
 			}
 			break;
 		}
