@@ -1,27 +1,27 @@
 #popup-div {
-    min-width: 30em;
-    margin: 15px;
+	min-width: 30em;
+	margin: 15px;
 }
 
 #icon {
-    max-height: 26px;
-    vertical-align: middle;
+	max-height: 26px;
+	vertical-align: middle;
 }
 
 #title {
-    font-weight: bold;
-    font-size: large;
+	font-weight: bold;
+	font-size: large;
 }
 
 p {
-    font-weight: normal;
-    font-size: medium;
+	font-weight: normal;
+	font-size: medium;
 }
 
 td {
-    width: 70%;
+	width: 70%;
 }
 
-td+td {
-    width: auto;
+td + td {
+	width: auto;
 }

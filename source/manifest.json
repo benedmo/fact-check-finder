@@ -22,12 +22,6 @@
     "host_permissions": [
         "*://*/*"
     ],
-    "content_scripts": [{
-        "matches": ["https://github.com/fregante/browser-extension-template/*"],
-        "js": ["js/content.js"],
-        "css": ["css/content.css"],
-        "run_at": "document_end"
-    }],
     "background": {
         "service_worker": "js/background.js",
         "type": "module"
