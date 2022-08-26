@@ -3,7 +3,7 @@
 <h1 align="center">Fact-check finder</h1>
 <h3 align="center">Browser extension to find Dutch/Flemish fact-checks by searching for a given sentence.</h3>
 <p align="center">
-<img src="img/../source/img/screenshot_results.png"/>
+<img src="media/screenshot_results.png"/>
 </p>
 
 <details>
