@@ -16,8 +16,7 @@
     },
     "permissions": [
         "storage",
-        "contextMenus",
-        "tabs"
+        "contextMenus"
     ],
     "host_permissions": [
         "*://*/*"
