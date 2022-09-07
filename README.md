@@ -1,6 +1,9 @@
 # Fact-check finder
 
 <h1 align="center">Fact-check finder</h1>
+
+<h4 align="center">Install from the <a href="https://chrome.google.com/webstore/detail/benedmo-fact-check-finder/fnokmioemkmfcaieceahnjgjkhhldgjo">Chrome Web Store</a></h4>
+
 <h3 align="center">Browser extension to find Dutch/Flemish fact-checks by searching for a given sentence.</h3>
 <p align="center">
 <img src="media/screenshot_results.png"/>
