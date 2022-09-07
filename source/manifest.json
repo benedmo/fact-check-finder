@@ -3,7 +3,7 @@
     "version": "1.2",
     "description": "Find Flemish/Dutch fact-checks from any web page or highlighted text",
     "homepage_url": "https://github.com/benedmo/fact-check-finder",
-    "manifest_version": "3",
+    "manifest_version": 3,
     "minimum_chrome_version": "100",
     "browser_specific_settings": {
         "gecko": {
