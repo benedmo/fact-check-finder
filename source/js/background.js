@@ -8,6 +8,19 @@ browser.contextMenus.create({
 	contexts: ['selection'],
 });
 
+/**
+ * Received a URL from the API results and appends utm_ tags accordingly
+ * @param {String} url
+ * @returns {String} url with tags
+ */
+function transformUrlToHaveTagParameters(url) {
+	const u = new URL(url);
+	u.searchParams.set('utm_source', 'browser');
+	u.searchParams.set('utm_medium', 'chrome');
+	u.searchParams.set('utm_campaign', 'benedmo');
+	return u.toString();
+}
+
 function getApiResults(selectedText) {
 	return fetch('https://benedmo.textgain.com/matchfc', {
 		method: 'POST',
@@ -15,6 +28,11 @@ function getApiResults(selectedText) {
 		body: JSON.stringify({q: selectedText}),
 	}).then(
 		response => response.json(),
+	).then(
+		response => response.map(result => {
+			result.url = transformUrlToHaveTagParameters(result.url);
+			return result;
+		}),
 	);
 }
 
