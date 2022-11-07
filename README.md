@@ -1,5 +1,3 @@
-# Fact-check finder
-
 <h1 align="center">Fact-check finder</h1>
 
 <h4 align="center">Install from the <a href="https://chrome.google.com/webstore/detail/benedmo-fact-check-finder/fnokmioemkmfcaieceahnjgjkhhldgjo">Chrome Web Store</a></h4>
